@@ -12,6 +12,8 @@
 		04CE9EC1216DE5A300BC21FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE9EBF216DE5A300BC21FE /* Main.storyboard */; };
 		04CE9EC3216DE5A500BC21FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CE9EC2216DE5A500BC21FE /* Assets.xcassets */; };
 		04CE9EC6216DE5A500BC21FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE9EC4216DE5A500BC21FE /* LaunchScreen.storyboard */; };
+		04CE9ED2216F49BE00BC21FE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED1216F49BE00BC21FE /* Card.swift */; };
+		04CE9ED4216F4C8900BC21FE /* FlipCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		04CE9EC2216DE5A500BC21FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04CE9EC5216DE5A500BC21FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CE9EC7216DE5A500BC21FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CE9ED1216F49BE00BC21FE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCardViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		04CE9EBA216DE5A300BC21FE /* CardGame01 */ = {
 			isa = PBXGroup;
 			children = (
+				04CE9ECE216F498900BC21FE /* Class01 */,
 				04CE9ECD216DE5D800BC21FE /* SourceFiles */,
 				04CE9EBD216DE5A300BC21FE /* ViewController.swift */,
 				04CE9EBF216DE5A300BC21FE /* Main.storyboard */,
@@ -70,6 +75,23 @@
 				04CE9EC4216DE5A500BC21FE /* LaunchScreen.storyboard */,
 			);
 			path = SourceFiles;
+			sourceTree = "<group>";
+		};
+		04CE9ECE216F498900BC21FE /* Class01 */ = {
+			isa = PBXGroup;
+			children = (
+				04CE9ECF216F499400BC21FE /* Model */,
+			);
+			path = Class01;
+			sourceTree = "<group>";
+		};
+		04CE9ECF216F499400BC21FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04CE9ED1216F49BE00BC21FE /* Card.swift */,
+				04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +167,8 @@
 			files = (
 				04CE9EBE216DE5A300BC21FE /* ViewController.swift in Sources */,
 				04CE9EBC216DE5A300BC21FE /* AppDelegate.swift in Sources */,
+				04CE9ED2216F49BE00BC21FE /* Card.swift in Sources */,
+				04CE9ED4216F4C8900BC21FE /* FlipCardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
