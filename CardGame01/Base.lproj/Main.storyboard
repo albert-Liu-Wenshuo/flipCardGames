@@ -135,12 +135,31 @@
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzz-mM-RS0">
+                                <rect key="frame" x="259" y="637" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <state key="normal" title="重开"/>
+                                <connections>
+                                    <action selector="replay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qJC-02-qTl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-7h-2qg">
+                                <rect key="frame" x="16" y="637" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <state key="normal" title="洗牌"/>
+                                <connections>
+                                    <action selector="washCards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hha-eK-Coa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="25L-Jv-ktu" id="sOR-4D-XA2"/>
+                        <outlet property="washButton" destination="xzp-7h-2qg" id="dqZ-rQ-4Iz"/>
                         <outletCollection property="flipButtonsList" destination="QHg-oz-fh7" collectionClass="NSMutableArray" id="Tr3-L9-DoB"/>
                         <outletCollection property="flipButtonsList" destination="HKK-z7-ici" collectionClass="NSMutableArray" id="7EH-9K-InN"/>
                         <outletCollection property="flipButtonsList" destination="sUr-zy-Bvu" collectionClass="NSMutableArray" id="UA8-ZJ-qsG"/>

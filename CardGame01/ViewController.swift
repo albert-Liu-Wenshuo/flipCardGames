@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     // ... 可以使用拖拽全部对象的方式将 storyboard 上面的组件在代码中创建一个数组 [Outlet Collection]
     @IBOutlet var flipButtonsList: [UIButton]!      // ... 存储全部p翻牌按钮的数组
     @IBOutlet weak var flipCountLabel: UILabel!     // ... 用于记录翻牌次数的label
-
+    @IBOutlet weak var washButton: UIButton!        // ... 洗牌按钮
+    
     // ... 创建用于数据处理的函数
     /**
      1. 初始化 flipViewModel 需要获取到 flipButtonsList的count 初始化的时候的相互引用会引发重提
@@ -39,8 +40,33 @@ class ViewController: UIViewController {
         
     }
 
+    // ... 洗牌方法
+    @IBAction func washCards(_ sender: UIButton) {
+        flipViewModel.washTheCards()
+        refreshViewAfterDataExcute()
+    }
+
+    // ... 重新开局
+    @IBAction func replay(_ sender: UIButton) {
+
+        // ... 需要恢复历史数据
+        emojis.removeAll()
+        emojiList = ["🐱", "🐹", "🍈", "🥦", "🤽🏽‍♀️", "☹️", "😗", "🥔", "🥨", "🐤"]
+        flipCount = 0
+
+        flipViewModel.resetThePlay()
+        refreshViewAfterDataExcute()
+
+        // ... 重新开局之后才能洗牌
+        sender.isEnabled = true
+    }
     // ... 用于实现翻牌的点击方法
     @IBAction func flipButton(_ sender: UIButton) {
+
+        // ... 游戏开始之后就不能洗牌了
+        washButton.isEnabled = false
+
+
 //        guard let buttonEmojiIndex = flipButtonsList.firstIndex(of: sender) else {
 //            print("点击的按钮没有加入到翻牌按钮组合中")
 //            return
@@ -101,21 +127,32 @@ class ViewController: UIViewController {
         for buttonIndex in flipButtonsList.indices {
             let button = flipButtonsList[buttonIndex]
             let card = flipViewModel.Cards[buttonIndex]
-            if card.isMatched {
-                button.isEnabled = false
-                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+            // ... 换一种做法： 如果卡牌已经翻面了在判断它e的匹配状况
+            button.setTitle("", for:  .normal)
+            button.setTitle(emoji(withButtonIndex: card.identified), for:  .selected)
+            if card.isFaceUp {
+                button.isSelected = true
+                button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             }else {
-                button.setTitle("", for:  .normal)
-                // ... emoji 是有card 的唯一标示一一对应的
-                button.setTitle(emoji(withButtonIndex: card.identified), for:  .selected)
-                if card.isFaceUp {
-                    button.isSelected = true
-                    button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                }else {
-                    button.isSelected = false
-                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-                }
+                button.isSelected = false
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0): #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
+
+//            if card.isMatched {
+//                button.isEnabled = false
+//                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+//            }else {
+//                button.setTitle("", for:  .normal)
+//                // ... emoji 是有card 的唯一标示一一对应的
+//                button.setTitle(emoji(withButtonIndex: card.identified), for:  .selected)
+//                if card.isFaceUp {
+//                    button.isSelected = true
+//                    button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//                }else {
+//                    button.isSelected = false
+//                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+//                }
+//            }
         }
 
     }

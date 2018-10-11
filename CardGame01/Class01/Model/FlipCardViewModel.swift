@@ -24,9 +24,14 @@ class FlipCardViewModel {
         self.numbersOfPairsOfCard = numbersOfPairsOfCard
 
         // ... 根据成对的卡牌数量生成对应的卡牌数组
+        createCards(withNumberOfPairsOfCard: numbersOfPairsOfCard)
+    }
+
+    // ... 创建卡牌对应的函数
+    func createCards(withNumberOfPairsOfCard number: Int) {
 
         // ... 当我们在函数中实际上不需要调用某个参数的时候可以使用 '_' 的方式忽略掉这个参数
-        for _ in 1...numbersOfPairsOfCard {
+        for _ in 1...number {
 
             let card = Card.init()
             // ... 因为Card 使用的是结构体的方式创建 == 值传递的方法
@@ -40,6 +45,34 @@ class FlipCardViewModel {
 
         }
     }
+
+    // ... 创建一个洗牌的功能
+    func washTheCards() {
+        // ... 切牌50次
+        for _ in 1...50 {
+            let random_num_01 = Int(arc4random_uniform(UInt32(Cards.count)))
+            let random_num_02 = Int(arc4random_uniform(UInt32(Cards.count)))
+            if let subRange = Range.init(NSRange.init(location: random_num_01, length: 1)) {
+                let subCollection01 = [Cards[random_num_01]]
+                let subCollection02 = [Cards[random_num_02]]
+                Cards.replaceSubrange(subRange, with: subCollection02)
+                if let subRange = Range.init(NSRange.init(location: random_num_02, length: 1)) {
+                    Cards.replaceSubrange(subRange, with: subCollection01)
+                }
+            }
+        }
+    }
+
+    // ... 创建一个重新开始的功能
+    func resetThePlay() {
+        // .... 先将所有的Card 恢复到初始状态
+        Cards.removeAll()
+        indexOfOneAndOnlyFacedUpCard = nil
+        self.createCards(withNumberOfPairsOfCard: numbersOfPairsOfCard)
+        // ... 洗牌
+        washTheCards()
+    }
+
 
     func choseCard(with CardIndex: Int) {
         // ... 选中卡牌之后的操作逻辑
