@@ -11,9 +11,34 @@ import Foundation
 class FlipCardViewModel {
     // ... viewModel 类 实际作用就是用于处理 翻牌游戏的简单的业务逻辑
 
-    var numbersOfPairsOfCard : Int // ... 用于保存记录实际的翻牌组对的数量的变量名
+    var numbersOfPairsOfCard : Int  // ... 用于保存记录实际的翻牌组对的数量的变量名
     var Cards = [Card]()            // ... 初始化卡牌数组的属性
-    var indexOfOneAndOnlyFacedUpCard : Int?     // ... 用于存储唯一一张翻面的卡牌的index
+    var indexOfOneAndOnlyFacedUpCard : Int? {
+        // ... 在 indexOfOneAndOnlyFacedUpCard 自己的构造方法中是不是调用自己的
+        get {
+            var foundIndex: Int?
+            // ... 遍历card列表以判断是不是唯一一个牌面朝上的card
+            for cardIndex in Cards.indices {
+                let card = Cards[cardIndex]
+                if card.isFaceUp == true {
+                    if foundIndex == nil {
+                        foundIndex = cardIndex
+                    }else {
+                        return nil
+                    }
+                }
+            }
+            return foundIndex
+        }
+
+        set(index) {
+            // ... 设置除了设置的index之外的其他card 都设置为反面
+            for cardIndex in Cards.indices {
+                Cards[cardIndex].isFaceUp = (cardIndex == index)
+            }
+        }
+
+    }    // ... 用于存储唯一一张翻面的卡牌的index
 
 
 
@@ -88,25 +113,35 @@ class FlipCardViewModel {
 
          2. 需要判断点击相同的牌的处理是不操作
          */
-        if let hisCardIndex = indexOfOneAndOnlyFacedUpCard, hisCardIndex != CardIndex {
-
+//        if let hisCardIndex = indexOfOneAndOnlyFacedUpCard, hisCardIndex != CardIndex {
+//
+//            Cards[CardIndex].isFaceUp = true
+//            if Cards[hisCardIndex].identified == Cards[CardIndex].identified {
+//                Cards[hisCardIndex].isMatched = true
+//                Cards[CardIndex].isMatched = true
+//            }
+//            indexOfOneAndOnlyFacedUpCard = nil
+//
+//        }else {
+//
+//            // ... 遍历全部的c卡牌并做对应的处理
+//            indexOfOneAndOnlyFacedUpCard = CardIndex
+//
+//            for index in Cards.indices {
+//                Cards[index].isFaceUp = false
+//            }
+//            Cards[CardIndex].isFaceUp = true
+//
+//        }
+        // ... 使用了计算属性之后的翻牌逻辑测试
+        if let cardBeforeIndex = indexOfOneAndOnlyFacedUpCard, cardBeforeIndex != CardIndex {
             Cards[CardIndex].isFaceUp = true
-            if Cards[hisCardIndex].identified == Cards[CardIndex].identified {
-                Cards[hisCardIndex].isMatched = true
+            if Cards[cardBeforeIndex].identified == Cards[CardIndex].identified {
                 Cards[CardIndex].isMatched = true
+                Cards[cardBeforeIndex].isMatched = true
             }
-            indexOfOneAndOnlyFacedUpCard = nil
-
         }else {
-
-            // ... 遍历全部的c卡牌并做对应的处理
             indexOfOneAndOnlyFacedUpCard = CardIndex
-
-            for index in Cards.indices {
-                Cards[index].isFaceUp = false
-            }
-            Cards[CardIndex].isFaceUp = true
-
         }
     }
 

@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,136 +18,154 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-oz-fh7">
-                                <rect key="frame" x="16" y="73" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOd-fV-SLk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKK-z7-ici">
-                                <rect key="frame" x="137" y="74" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0he-fK-RFf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUr-zy-Bvu">
-                                <rect key="frame" x="259" y="74" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAy-7T-olV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7e-JM-DJu">
-                                <rect key="frame" x="16" y="190" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jDA-xe-2Af"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMj-Ny-vmT">
-                                <rect key="frame" x="137" y="191" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lP-t4-C1k"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nww-K7-qvT">
-                                <rect key="frame" x="259" y="191" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tr6-Si-CxK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-5M-qux">
-                                <rect key="frame" x="16" y="311" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGl-wG-8Ze"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRT-dj-0N5">
-                                <rect key="frame" x="137" y="312" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V7d-tZ-66J"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCj-XN-ffA">
-                                <rect key="frame" x="259" y="312" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4IG-Mn-hG1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-ge-LXx">
-                                <rect key="frame" x="16" y="429" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ET9-cr-uEy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doM-bq-3u3">
-                                <rect key="frame" x="137" y="430" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTH-WT-FEd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPG-3i-5KX">
-                                <rect key="frame" x="259" y="430" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <connections>
-                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2w7-nK-fwH"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="翻牌计数： 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25L-Jv-ktu">
-                                <rect key="frame" x="30" y="743" width="315" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4V9-fr-mij">
+                                <rect key="frame" x="16" y="44.000000000000028" width="343" height="456.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-2I-mPs">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="108.33333333333333"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-oz-fh7">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="108.33333333333333"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kOd-fV-SLk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKK-z7-ici">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="108.33333333333333"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0he-fK-RFf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUr-zy-Bvu">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="108.33333333333333"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAy-7T-olV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6vu-Zk-rHe">
+                                        <rect key="frame" x="0.0" y="116.33333333333334" width="343" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7e-JM-DJu">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="108"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jDA-xe-2Af"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMj-Ny-vmT">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="108"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lP-t4-C1k"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nww-K7-qvT">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="108"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tr6-Si-CxK"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G3n-DL-UIv">
+                                        <rect key="frame" x="0.0" y="232.33333333333334" width="343" height="108.33333333333334"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-5M-qux">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="108.33333333333333"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGl-wG-8Ze"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRT-dj-0N5">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="108.33333333333333"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V7d-tZ-66J"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCj-XN-ffA">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="108.33333333333333"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4IG-Mn-hG1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-UI-Wye">
+                                        <rect key="frame" x="0.0" y="348.66666666666669" width="343" height="108"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-ge-LXx">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="108"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ET9-cr-uEy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doM-bq-3u3">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="108"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTH-WT-FEd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPG-3i-5KX">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="108"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <connections>
+                                                    <action selector="flipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2w7-nK-fwH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="翻牌计数： 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25L-Jv-ktu">
+                                <rect key="frame" x="30" y="730" width="315" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzz-mM-RS0">
-                                <rect key="frame" x="259" y="637" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzz-mM-RS0">
+                                <rect key="frame" x="279" y="674" width="80" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="pgR-og-OkH"/>
+                                    <constraint firstAttribute="width" constant="80" id="xuO-Bh-dvi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="重开"/>
                                 <connections>
                                     <action selector="replay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qJC-02-qTl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-7h-2qg">
-                                <rect key="frame" x="16" y="637" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzp-7h-2qg">
+                                <rect key="frame" x="16" y="674" width="80" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Ccn-S5-BV0"/>
+                                    <constraint firstAttribute="height" constant="50" id="j23-nG-1kr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="洗牌"/>
                                 <connections>
@@ -155,21 +174,35 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pzz-mM-RS0" firstAttribute="top" secondItem="xzp-7h-2qg" secondAttribute="top" id="LUt-Tz-5k8"/>
+                            <constraint firstItem="25L-Jv-ktu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SXG-lM-cRA"/>
+                            <constraint firstItem="25L-Jv-ktu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Tih-M0-35P"/>
+                            <constraint firstItem="4V9-fr-mij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cDq-Tm-ovq"/>
+                            <constraint firstItem="xzp-7h-2qg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dgu-qO-a1D"/>
+                            <constraint firstItem="Pzz-mM-RS0" firstAttribute="top" relation="lessThanOrEqual" secondItem="4V9-fr-mij" secondAttribute="bottom" constant="318" id="iaQ-3j-J7k"/>
+                            <constraint firstItem="4V9-fr-mij" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n9f-av-4Po"/>
+                            <constraint firstItem="4V9-fr-mij" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="9:16" id="p2R-bD-syV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pzz-mM-RS0" secondAttribute="trailing" constant="16" id="rYL-t8-rZP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25L-Jv-ktu" secondAttribute="trailing" constant="30" id="vqZ-ZJ-CVq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4V9-fr-mij" secondAttribute="trailing" constant="16" id="z4x-kj-XsX"/>
+                            <constraint firstItem="25L-Jv-ktu" firstAttribute="top" secondItem="Pzz-mM-RS0" secondAttribute="bottom" constant="8" id="zFa-Nv-geP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="25L-Jv-ktu" id="sOR-4D-XA2"/>
                         <outlet property="washButton" destination="xzp-7h-2qg" id="dqZ-rQ-4Iz"/>
-                        <outletCollection property="flipButtonsList" destination="QHg-oz-fh7" collectionClass="NSMutableArray" id="Tr3-L9-DoB"/>
                         <outletCollection property="flipButtonsList" destination="HKK-z7-ici" collectionClass="NSMutableArray" id="7EH-9K-InN"/>
+                        <outletCollection property="flipButtonsList" destination="QHg-oz-fh7" collectionClass="NSMutableArray" id="Tr3-L9-DoB"/>
                         <outletCollection property="flipButtonsList" destination="sUr-zy-Bvu" collectionClass="NSMutableArray" id="UA8-ZJ-qsG"/>
+                        <outletCollection property="flipButtonsList" destination="nww-K7-qvT" collectionClass="NSMutableArray" id="2zl-ws-Ydd"/>
                         <outletCollection property="flipButtonsList" destination="e7e-JM-DJu" collectionClass="NSMutableArray" id="ARu-rc-MFc"/>
                         <outletCollection property="flipButtonsList" destination="tMj-Ny-vmT" collectionClass="NSMutableArray" id="zUP-fC-ZF7"/>
-                        <outletCollection property="flipButtonsList" destination="nww-K7-qvT" collectionClass="NSMutableArray" id="2zl-ws-Ydd"/>
+                        <outletCollection property="flipButtonsList" destination="Npz-5M-qux" collectionClass="NSMutableArray" id="jhG-Zg-S0R"/>
                         <outletCollection property="flipButtonsList" destination="wRT-dj-0N5" collectionClass="NSMutableArray" id="UMj-UY-Wfb"/>
                         <outletCollection property="flipButtonsList" destination="yCj-XN-ffA" collectionClass="NSMutableArray" id="1u8-Ha-fBE"/>
                         <outletCollection property="flipButtonsList" destination="DCs-ge-LXx" collectionClass="NSMutableArray" id="vbu-oK-f9h"/>
-                        <outletCollection property="flipButtonsList" destination="Npz-5M-qux" collectionClass="NSMutableArray" id="jhG-Zg-S0R"/>
                         <outletCollection property="flipButtonsList" destination="doM-bq-3u3" collectionClass="NSMutableArray" id="vRb-M7-8kh"/>
                         <outletCollection property="flipButtonsList" destination="QPG-3i-5KX" collectionClass="NSMutableArray" id="Nhp-aH-6i4"/>
                     </connections>

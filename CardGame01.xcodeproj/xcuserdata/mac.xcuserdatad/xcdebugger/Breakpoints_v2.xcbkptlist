@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CardGame01/Class01/Model/FlipCardViewModel.swift"
-            timestampString = "560955027.787513"
+            timestampString = "561023780.556206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "resetThePlay()"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "choseCard(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

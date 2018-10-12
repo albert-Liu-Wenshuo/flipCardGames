@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     // ... 创建了用于承载翻牌之后显示的内容的emoji列表
     var emojiList = ["🐱", "🐹", "🍈", "🥦", "🤽🏽‍♀️", "☹️", "😗", "🥔", "🥨", "🐤"]
 
+    //MARK: 设置成对的卡牌数量的计算函数
+    var numbersOfPairsOfCard: Int {
+        return (flipButtonsList.count + 1) / 2
+    }
+
 
     var flipCount = 0 {
         // ... didSet ... 用于在属性更改之后进行更新的操作
@@ -33,7 +38,7 @@ class ViewController: UIViewController {
      2. 解决的方式是使 flipViewModel 以懒加载的方式加载，这样就不会相互冲突了
      3. (flipButtonsList.count + 1) / 2) 的方式可以规避创建的card数组的总数量小于button数组
      */
-    lazy var flipViewModel = FlipCardViewModel.init(numbersOfPairsOfCard: (flipButtonsList.count + 1) / 2)
+    lazy var flipViewModel = FlipCardViewModel.init(numbersOfPairsOfCard: self.numbersOfPairsOfCard)
 
     override func viewDidLoad() {
         super.viewDidLoad()
