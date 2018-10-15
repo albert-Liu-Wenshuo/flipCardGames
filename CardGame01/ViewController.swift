@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         return (flipButtonsList.count + 1) / 2
     }
 
-
     var flipCount = 0 {
         // ... didSet ... 用于在属性更改之后进行更新的操作
         // ... 使用这样的方式可以避免在每次修改 'flipCount' 的时候添加相同的修改代码
@@ -71,29 +70,6 @@ class ViewController: UIViewController {
         // ... 游戏开始之后就不能洗牌了
         washButton.isEnabled = false
 
-
-//        guard let buttonEmojiIndex = flipButtonsList.firstIndex(of: sender) else {
-//            print("点击的按钮没有加入到翻牌按钮组合中")
-//            return
-//        }
-//        let emojiStr = emojiList[buttonEmojiIndex]
-//        print("click on the button emoji is \(emojiStr)")
-//        // ... 实现点击之后翻牌的方法
-//        sender.setTitle("", for:  .normal)
-//        sender.setTitle(emojiStr, for:  .selected)
-//        if sender.isSelected == true {
-//            // ... 已经翻牌了现在恢复原来的状态
-//            sender.isSelected = false
-//            sender.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-//        }else {
-//            // ... 牌面没有翻开 ... 现在选择翻开
-//
-//            sender.isSelected = true
-//            sender.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//            // ... 每次翻开牌面选择 增加翻牌计数
-//            flipCount = flipCount + 1
-//        }
-
         // ... 使用MVC 的方式重新构建翻牌游戏的逻辑
         guard let choseIndex = flipButtonsList.firstIndex(of: sender) else {
             print("该按钮没有加入到切换列表中")
@@ -104,26 +80,28 @@ class ViewController: UIViewController {
         flipViewModel.choseCard(with: choseIndex)
         // ... 之后执行更新UI的操作
         refreshViewAfterDataExcute()
+        print(emojis)
     }
 
     // ... 此时需要构建一个用于存储 emoji 与 index 的对应关系的变量
-    var emojis = [Int: String]()
+    var emojis = [Card: String]()
 
 
-    // ... 现在需要将 emoji 与 卡牌相互匹配起来
-    func emoji(withButtonIndex index: Int) -> String {
+    // ... 现在需要将 emoji 与 卡牌 相互匹配起来
+    func emoji(withObjent card: Card) -> String {
 
-        // ... 我们在每次需要获取emoji的时候给对应的index获取响应的emoji
-
-        if emojis[index] == nil {
-            let redomIndex = Int(arc4random_uniform(UInt32(emojiList.count)))
-            emojis[index] = emojiList[redomIndex]
-            // ... 将emoji输入到数组中之后需要将该emoji移除出数组，以免以后复用
+        // ... 1. 如果我们没有给这个card设置过对应的emoji
+        if emojis[card] == nil {
+            // ... 1.1 生成一个随机的 emojiList 的 index
+            let redomIndex = emojiList.count.arc4random()       /** 使用函数中定义好的 Int的extension */
+            // ... 1.2 将字典 emojis[card] 赋值为对应的 emoji
+            emojis[card] = emojiList[redomIndex]
+            // ... 1.3 将已经赋值了的 emoji 从 emojis 中移除避免卡牌对应的 emoji 重复
             emojiList.remove(at: redomIndex)
         }
 
         // ... 如果找不到inde对应的emoji 则返回一个指定好的标识符 '?'
-        return emojis[index] ?? "?"
+        return emojis[card] ?? "?"
     }
 
     // ... 在点击之后刷新页面的操作
@@ -134,7 +112,7 @@ class ViewController: UIViewController {
             let card = flipViewModel.Cards[buttonIndex]
             // ... 换一种做法： 如果卡牌已经翻面了在判断它e的匹配状况
             button.setTitle("", for:  .normal)
-            button.setTitle(emoji(withButtonIndex: card.identified), for:  .selected)
+            button.setTitle(emoji(withObjent: card), for:  .selected)
             if card.isFaceUp {
                 button.isSelected = true
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -142,22 +120,6 @@ class ViewController: UIViewController {
                 button.isSelected = false
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0): #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
-
-//            if card.isMatched {
-//                button.isEnabled = false
-//                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-//            }else {
-//                button.setTitle("", for:  .normal)
-//                // ... emoji 是有card 的唯一标示一一对应的
-//                button.setTitle(emoji(withButtonIndex: card.identified), for:  .selected)
-//                if card.isFaceUp {
-//                    button.isSelected = true
-//                    button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-//                }else {
-//                    button.isSelected = false
-//                    button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-//                }
-//            }
         }
 
     }

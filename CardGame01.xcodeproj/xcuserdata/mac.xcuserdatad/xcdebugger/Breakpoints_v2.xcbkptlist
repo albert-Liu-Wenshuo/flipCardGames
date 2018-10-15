@@ -4,18 +4,26 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CardGame01/Class01/Model/FlipCardViewModel.swift"
-            timestampString = "561023780.556206"
+            filePath = "CardGame01/ViewController.swift"
+            timestampString = "561285034.758778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "choseCard(with:)"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "emoji(withObjent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

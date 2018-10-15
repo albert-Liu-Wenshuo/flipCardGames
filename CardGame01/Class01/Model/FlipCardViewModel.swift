@@ -8,12 +8,13 @@
 
 import Foundation
 
-class FlipCardViewModel {
+// ... 将数据处理的类型设计为 struct 可以有效的避免其被继承乱用
+struct FlipCardViewModel {
     // ... viewModel 类 实际作用就是用于处理 翻牌游戏的简单的业务逻辑
 
-    var numbersOfPairsOfCard : Int  // ... 用于保存记录实际的翻牌组对的数量的变量名
-    var Cards = [Card]()            // ... 初始化卡牌数组的属性
-    var indexOfOneAndOnlyFacedUpCard : Int? {
+    public var numbersOfPairsOfCard : Int  // ... 用于保存记录实际的翻牌组对的数量的变量名
+    public var Cards = [Card]()            // ... 初始化卡牌数组的属性
+    private var indexOfOneAndOnlyFacedUpCard : Int? {
         // ... 在 indexOfOneAndOnlyFacedUpCard 自己的构造方法中是不是调用自己的
         get {
             var foundIndex: Int?
@@ -42,7 +43,7 @@ class FlipCardViewModel {
 
 
 
-    init(numbersOfPairsOfCard: Int) {
+    public init(numbersOfPairsOfCard: Int) {
         // ... 翻牌游戏初始化阶段需要做的一些事情
 
         // ... 当遇到获取的参数名称和设置的变量名称相同的时候； 可以使用self.'参数名称'的方式标识变量
@@ -50,10 +51,13 @@ class FlipCardViewModel {
 
         // ... 根据成对的卡牌数量生成对应的卡牌数组
         createCards(withNumberOfPairsOfCard: numbersOfPairsOfCard)
+
+        // .... 洗牌
+        washTheCards()
     }
 
     // ... 创建卡牌对应的函数
-    func createCards(withNumberOfPairsOfCard number: Int) {
+    mutating private func createCards(withNumberOfPairsOfCard number: Int) {
 
         // ... 当我们在函数中实际上不需要调用某个参数的时候可以使用 '_' 的方式忽略掉这个参数
         for _ in 1...number {
@@ -72,11 +76,12 @@ class FlipCardViewModel {
     }
 
     // ... 创建一个洗牌的功能
-    func washTheCards() {
+    mutating func washTheCards() {
         // ... 切牌50次
         for _ in 1...50 {
-            let random_num_01 = Int(arc4random_uniform(UInt32(Cards.count)))
-            let random_num_02 = Int(arc4random_uniform(UInt32(Cards.count)))
+
+            let random_num_01 = Cards.count.arc4random()
+            let random_num_02 = Cards.count.arc4random()
             if let subRange = Range.init(NSRange.init(location: random_num_01, length: 1)) {
                 let subCollection01 = [Cards[random_num_01]]
                 let subCollection02 = [Cards[random_num_02]]
@@ -89,7 +94,7 @@ class FlipCardViewModel {
     }
 
     // ... 创建一个重新开始的功能
-    func resetThePlay() {
+    mutating func resetThePlay() {
         // .... 先将所有的Card 恢复到初始状态
         Cards.removeAll()
         indexOfOneAndOnlyFacedUpCard = nil
@@ -99,7 +104,7 @@ class FlipCardViewModel {
     }
 
 
-    func choseCard(with CardIndex: Int) {
+    mutating func choseCard(with CardIndex: Int) {
         // ... 选中卡牌之后的操作逻辑
 
         /**
@@ -113,30 +118,12 @@ class FlipCardViewModel {
 
          2. 需要判断点击相同的牌的处理是不操作
          */
-//        if let hisCardIndex = indexOfOneAndOnlyFacedUpCard, hisCardIndex != CardIndex {
-//
-//            Cards[CardIndex].isFaceUp = true
-//            if Cards[hisCardIndex].identified == Cards[CardIndex].identified {
-//                Cards[hisCardIndex].isMatched = true
-//                Cards[CardIndex].isMatched = true
-//            }
-//            indexOfOneAndOnlyFacedUpCard = nil
-//
-//        }else {
-//
-//            // ... 遍历全部的c卡牌并做对应的处理
-//            indexOfOneAndOnlyFacedUpCard = CardIndex
-//
-//            for index in Cards.indices {
-//                Cards[index].isFaceUp = false
-//            }
-//            Cards[CardIndex].isFaceUp = true
-//
-//        }
+
         // ... 使用了计算属性之后的翻牌逻辑测试
         if let cardBeforeIndex = indexOfOneAndOnlyFacedUpCard, cardBeforeIndex != CardIndex {
             Cards[CardIndex].isFaceUp = true
-            if Cards[cardBeforeIndex].identified == Cards[CardIndex].identified {
+            // ... Cards 实现了 Hashable 协议可以直接使用判等函数
+            if Cards[cardBeforeIndex] == Cards[CardIndex] {
                 Cards[CardIndex].isMatched = true
                 Cards[cardBeforeIndex].isMatched = true
             }
@@ -146,3 +133,4 @@ class FlipCardViewModel {
     }
 
 }
+

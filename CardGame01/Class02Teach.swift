@@ -69,3 +69,25 @@ func learnHowToUseTuple() {
 
 
 }
+
+/**
+ 1. 对于 ENUM 的学习
+    1. swift 对于 enum 的使用与其他语言的区别在于 swift 的 enum 可以添加关联值
+    2. 像 ； swift中的 optional 就是一种简单的 enum
+    3. 对于 enum 中的关联值，只能在初始化 enum的时候设置
+ */
+
+enum mainEnum {
+    case simple
+    case simpleWithOption(content: String)
+    case contentWithDouble(String, count: Int)
+}
+
+func learnHowToUseEnumInSwift() {
+    // ... 初始化一个具有关联值的enum
+
+    let enum_01 = mainEnum.contentWithDouble("hello", count: 1)
+
+    print("输出实际的enum值\(enum_01)")
+
+}
