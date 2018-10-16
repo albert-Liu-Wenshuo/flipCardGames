@@ -17,19 +17,26 @@ struct FlipCardViewModel {
     private var indexOfOneAndOnlyFacedUpCard : Int? {
         // ... 在 indexOfOneAndOnlyFacedUpCard 自己的构造方法中是不是调用自己的
         get {
-            var foundIndex: Int?
-            // ... 遍历card列表以判断是不是唯一一个牌面朝上的card
-            for cardIndex in Cards.indices {
-                let card = Cards[cardIndex]
-                if card.isFaceUp == true {
-                    if foundIndex == nil {
-                        foundIndex = cardIndex
-                    }else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+
+            // ... 闭包函数中的fliter用于遍历collection中的参数 并将返回值为true的参数回创建一个新数组
+            // ... 闭包函数中的map用于遍历collection中的参数 并将处理后的参数返回到生成数组
+
+            let faceupIndices = Cards.indices.filter{ Cards[$0].isFaceUp }
+            return faceupIndices.count == 1 ? faceupIndices.first: nil
+
+//            var foundIndex: Int?
+//            // ... 遍历card列表以判断是不是唯一一个牌面朝上的card
+//            for cardIndex in Cards.indices {
+//                let card = Cards[cardIndex]
+//                if card.isFaceUp == true {
+//                    if foundIndex == nil {
+//                        foundIndex = cardIndex
+//                    }else {
+//                        return nil
+//                    }
+//                }
+//            }
+//            return foundIndex
         }
 
         set(index) {
