@@ -27,3 +27,16 @@ extension Int {
     }
 
 }
+
+// MARK: collection 中获取唯一元素的方法
+// ... 当且仅当 collection 中只有一个元素的时候将这个元素返回；否则返回nil
+extension Collection {
+    // .... Element 代表当前类型的概念；能够将传入的类型自己正确的解析
+    func oneAndOnly() -> Element? {
+        /**
+         count 是 collection中的函数 用于获取 collection 中元素的个数
+         first 是 collection中的函数 用于获取 collection 中的第一个元素
+         */
+        return count == 1 ? first : nil
+    }
+}
