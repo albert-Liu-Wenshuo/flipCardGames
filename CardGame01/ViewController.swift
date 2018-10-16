@@ -22,13 +22,32 @@ class ViewController: UIViewController {
         // ... didSet ... 用于在属性更改之后进行更新的操作
         // ... 使用这样的方式可以避免在每次修改 'flipCount' 的时候添加相同的修改代码
         didSet {
-            flipCountLabel.text = "翻牌计数： \(flipCount)"
+            updateFlipCountLabel()
         }
     }
 
+    func updateFlipCountLabel() {
+
+        let attribute_keyvalues :[NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.strokeColor: UIColor.yellow,
+            NSAttributedString.Key.strokeWidth: 2.0,
+            NSAttributedString.Key.foregroundColor: UIColor.darkText,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight:  .medium)
+        ]
+
+        let attstring = NSAttributedString(string: "翻牌计数： \(flipCount)", attributes: attribute_keyvalues)
+
+        flipCountLabel.attributedText = attstring
+    }
+
     // ... 可以使用拖拽全部对象的方式将 storyboard 上面的组件在代码中创建一个数组 [Outlet Collection]
-    @IBOutlet var flipButtonsList: [UIButton]!      // ... 存储全部p翻牌按钮的数组
-    @IBOutlet weak var flipCountLabel: UILabel!     // ... 用于记录翻牌次数的label
+    @IBOutlet var flipButtonsList: [UIButton]!      // ... 存储全部翻牌按钮的数组
+    @IBOutlet weak var flipCountLabel: UILabel! {
+        // ... 该方法可以在stroyboard初始化该组件之后执行
+        didSet {
+            updateFlipCountLabel()
+        }
+    }    // ... 用于记录翻牌次数的label
     @IBOutlet weak var washButton: UIButton!        // ... 洗牌按钮
     
     // ... 创建用于数据处理的函数
