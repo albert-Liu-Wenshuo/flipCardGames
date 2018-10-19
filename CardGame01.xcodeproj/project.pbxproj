@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040AEFCB21798C8600E497A5 /* imageAsset in Resources */ = {isa = PBXBuildFile; fileRef = 040AEFCA21798C8600E497A5 /* imageAsset */; };
 		042490BC217485A80035412C /* ToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042490BB217485A80035412C /* ToolExtension.swift */; };
-		04CE5F2C21722F9C0037CD08 /* 翻牌游戏29pt.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04CE5F2921722F9C0037CD08 /* 翻牌游戏29pt.jpeg */; };
-		04CE5F2D21722F9C0037CD08 /* 翻牌游戏20pt.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04CE5F2A21722F9C0037CD08 /* 翻牌游戏20pt.jpeg */; };
-		04CE5F2E21722F9C0037CD08 /* 翻牌游戏40pt.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04CE5F2B21722F9C0037CD08 /* 翻牌游戏40pt.jpeg */; };
-		04CE5F302172315E0037CD08 /* 爱心.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 04CE5F2F2172315E0037CD08 /* 爱心.jpeg */; };
+		04BD63CF21773488008518EB /* SingleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD63CE21773488008518EB /* SingleCard.swift */; };
+		04BD63D32177350E008518EB /* CardSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD63D22177350E008518EB /* CardSearchManager.swift */; };
+		04BD63D921775FFD008518EB /* CardSearchListBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD63D821775FFD008518EB /* CardSearchListBaseController.swift */; };
+		04BD63E0217769BD008518EB /* SingleCardLineStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD63DF217769BD008518EB /* SingleCardLineStyleCell.swift */; };
 		04CE5F33217440920037CD08 /* Class03Teach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE5F32217440920037CD08 /* Class03Teach.swift */; };
 		04CE9EBC216DE5A300BC21FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9EBB216DE5A300BC21FE /* AppDelegate.swift */; };
 		04CE9EBE216DE5A300BC21FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9EBD216DE5A300BC21FE /* ViewController.swift */; };
@@ -21,14 +22,16 @@
 		04CE9ED2216F49BE00BC21FE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED1216F49BE00BC21FE /* Card.swift */; };
 		04CE9ED4216F4C8900BC21FE /* FlipCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */; };
 		04CE9ED72170783C00BC21FE /* Class02Teach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED62170783C00BC21FE /* Class02Teach.swift */; };
+		9876BFE7BC66B66DF3E71C4E /* Pods_CardGame01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3466B4C7540C4A72701FADCB /* Pods_CardGame01.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040AEFCA21798C8600E497A5 /* imageAsset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imageAsset; path = CardGame01/imageAsset; sourceTree = "<group>"; };
 		042490BB217485A80035412C /* ToolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolExtension.swift; sourceTree = "<group>"; };
-		04CE5F2921722F9C0037CD08 /* 翻牌游戏29pt.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "翻牌游戏29pt.jpeg"; sourceTree = "<group>"; };
-		04CE5F2A21722F9C0037CD08 /* 翻牌游戏20pt.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "翻牌游戏20pt.jpeg"; sourceTree = "<group>"; };
-		04CE5F2B21722F9C0037CD08 /* 翻牌游戏40pt.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "翻牌游戏40pt.jpeg"; sourceTree = "<group>"; };
-		04CE5F2F2172315E0037CD08 /* 爱心.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "爱心.jpeg"; sourceTree = "<group>"; };
+		04BD63CE21773488008518EB /* SingleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCard.swift; sourceTree = "<group>"; };
+		04BD63D22177350E008518EB /* CardSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchManager.swift; sourceTree = "<group>"; };
+		04BD63D821775FFD008518EB /* CardSearchListBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchListBaseController.swift; sourceTree = "<group>"; };
+		04BD63DF217769BD008518EB /* SingleCardLineStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardLineStyleCell.swift; sourceTree = "<group>"; };
 		04CE5F32217440920037CD08 /* Class03Teach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class03Teach.swift; sourceTree = "<group>"; };
 		04CE9EB8216DE5A300BC21FE /* CardGame01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardGame01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CE9EBB216DE5A300BC21FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		04CE9ED1216F49BE00BC21FE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCardViewModel.swift; sourceTree = "<group>"; };
 		04CE9ED62170783C00BC21FE /* Class02Teach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Class02Teach.swift; path = CardGame01/Class02Teach.swift; sourceTree = SOURCE_ROOT; };
+		3466B4C7540C4A72701FADCB /* Pods_CardGame01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGame01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33182D4D9533A7AFD36069B /* Pods-CardGame01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGame01.debug.xcconfig"; path = "Target Support Files/Pods-CardGame01/Pods-CardGame01.debug.xcconfig"; sourceTree = "<group>"; };
+		C477A4B8BA5200E68EE49AA8 /* Pods-CardGame01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGame01.release.xcconfig"; path = "Target Support Files/Pods-CardGame01/Pods-CardGame01.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +53,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9876BFE7BC66B66DF3E71C4E /* Pods_CardGame01.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04BD63CD217732AA008518EB /* CardTest01 */ = {
+			isa = PBXGroup;
+			children = (
+				04BD63DC21776962008518EB /* View */,
+				04BD63D721775E7E008518EB /* Bases */,
+				04BD63D1217734BC008518EB /* ViewModel */,
+				04BD63D0217734AF008518EB /* Model */,
+			);
+			path = CardTest01;
+			sourceTree = "<group>";
+		};
+		04BD63D0217734AF008518EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04BD63CE21773488008518EB /* SingleCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04BD63D1217734BC008518EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04BD63D22177350E008518EB /* CardSearchManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04BD63D421774175008518EB /* ProtocolTool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProtocolTool;
+			sourceTree = "<group>";
+		};
+		04BD63D721775E7E008518EB /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				04BD63D821775FFD008518EB /* CardSearchListBaseController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		04BD63DC21776962008518EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04BD63DF217769BD008518EB /* SingleCardLineStyleCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04CE5F31217440070037CD08 /* Class03 */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +121,11 @@
 		04CE9EAF216DE5A300BC21FE = {
 			isa = PBXGroup;
 			children = (
+				040AEFCA21798C8600E497A5 /* imageAsset */,
 				04CE9EBA216DE5A300BC21FE /* CardGame01 */,
 				04CE9EB9216DE5A300BC21FE /* Products */,
+				853EDEA2B5B847BF8DBEA5F2 /* Pods */,
+				F99DBAE63994D744D53D37ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,10 +140,11 @@
 		04CE9EBA216DE5A300BC21FE /* CardGame01 */ = {
 			isa = PBXGroup;
 			children = (
+				04BD63D421774175008518EB /* ProtocolTool */,
+				04BD63CD217732AA008518EB /* CardTest01 */,
 				04CE9ECE216F498900BC21FE /* Class01 */,
 				04CE9ED52170781400BC21FE /* Class02 */,
 				04CE5F31217440070037CD08 /* Class03 */,
-				04CE9ED821722B5D00BC21FE /* imageAsset */,
 				04CE9EC7216DE5A500BC21FE /* Info.plist */,
 				04CE9EBF216DE5A300BC21FE /* Main.storyboard */,
 				04CE9ECD216DE5D800BC21FE /* SourceFiles */,
@@ -128,15 +189,21 @@
 			path = Class02;
 			sourceTree = "<group>";
 		};
-		04CE9ED821722B5D00BC21FE /* imageAsset */ = {
+		853EDEA2B5B847BF8DBEA5F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				04CE5F2F2172315E0037CD08 /* 爱心.jpeg */,
-				04CE5F2A21722F9C0037CD08 /* 翻牌游戏20pt.jpeg */,
-				04CE5F2921722F9C0037CD08 /* 翻牌游戏29pt.jpeg */,
-				04CE5F2B21722F9C0037CD08 /* 翻牌游戏40pt.jpeg */,
+				B33182D4D9533A7AFD36069B /* Pods-CardGame01.debug.xcconfig */,
+				C477A4B8BA5200E68EE49AA8 /* Pods-CardGame01.release.xcconfig */,
 			);
-			path = imageAsset;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F99DBAE63994D744D53D37ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3466B4C7540C4A72701FADCB /* Pods_CardGame01.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04CE9ECA216DE5A500BC21FE /* Build configuration list for PBXNativeTarget "CardGame01" */;
 			buildPhases = (
+				3495FFEE623A5B6E417B001B /* [CP] Check Pods Manifest.lock */,
 				04CE9EB4216DE5A300BC21FE /* Sources */,
 				04CE9EB5216DE5A300BC21FE /* Frameworks */,
 				04CE9EB6216DE5A300BC21FE /* Resources */,
+				2E4E22689FE5A53484F05607 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,29 +267,81 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CE9EC6216DE5A500BC21FE /* LaunchScreen.storyboard in Resources */,
-				04CE5F2E21722F9C0037CD08 /* 翻牌游戏40pt.jpeg in Resources */,
-				04CE5F2C21722F9C0037CD08 /* 翻牌游戏29pt.jpeg in Resources */,
+				040AEFCB21798C8600E497A5 /* imageAsset in Resources */,
 				04CE9EC3216DE5A500BC21FE /* Assets.xcassets in Resources */,
 				04CE9EC1216DE5A300BC21FE /* Main.storyboard in Resources */,
-				04CE5F2D21722F9C0037CD08 /* 翻牌游戏20pt.jpeg in Resources */,
-				04CE5F302172315E0037CD08 /* 爱心.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E4E22689FE5A53484F05607 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardGame01/Pods-CardGame01-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardGame01/Pods-CardGame01-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3495FFEE623A5B6E417B001B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CardGame01-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04CE9EB4216DE5A300BC21FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BD63E0217769BD008518EB /* SingleCardLineStyleCell.swift in Sources */,
 				04CE9EBE216DE5A300BC21FE /* ViewController.swift in Sources */,
 				04CE5F33217440920037CD08 /* Class03Teach.swift in Sources */,
 				04CE9EBC216DE5A300BC21FE /* AppDelegate.swift in Sources */,
+				04BD63D32177350E008518EB /* CardSearchManager.swift in Sources */,
 				04CE9ED2216F49BE00BC21FE /* Card.swift in Sources */,
 				042490BC217485A80035412C /* ToolExtension.swift in Sources */,
+				04BD63D921775FFD008518EB /* CardSearchListBaseController.swift in Sources */,
 				04CE9ED4216F4C8900BC21FE /* FlipCardViewModel.swift in Sources */,
 				04CE9ED72170783C00BC21FE /* Class02Teach.swift in Sources */,
+				04BD63CF21773488008518EB /* SingleCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +485,7 @@
 		};
 		04CE9ECB216DE5A500BC21FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33182D4D9533A7AFD36069B /* Pods-CardGame01.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,12 +498,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Albert.CardGame01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		04CE9ECC216DE5A500BC21FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C477A4B8BA5200E68EE49AA8 /* Pods-CardGame01.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,7 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Albert.CardGame01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

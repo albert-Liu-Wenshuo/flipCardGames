@@ -22,21 +22,7 @@ struct FlipCardViewModel {
             // ... 闭包函数中的map用于遍历collection中的参数 并将处理后的参数返回到生成数组
 
             let faceupIndices = Cards.indices.filter{ Cards[$0].isFaceUp }
-            return faceupIndices.oneAndOnly()
-
-//            var foundIndex: Int?
-//            // ... 遍历card列表以判断是不是唯一一个牌面朝上的card
-//            for cardIndex in Cards.indices {
-//                let card = Cards[cardIndex]
-//                if card.isFaceUp == true {
-//                    if foundIndex == nil {
-//                        foundIndex = cardIndex
-//                    }else {
-//                        return nil
-//                    }
-//                }
-//            }
-//            return foundIndex
+            return faceupIndices.oneAndOnly
         }
 
         set(index) {
