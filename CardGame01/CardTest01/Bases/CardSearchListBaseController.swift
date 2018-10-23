@@ -23,8 +23,8 @@ class CardSearchListBaseController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.configTableview()
-//        self.netservice
         // Do any additional setup after loading the view.
     }
 
@@ -82,6 +82,17 @@ extension CardSearchListBaseController {
         }
 
         self.registerCellForTableview()
+
+        // ... 设置 mjRefresh相关
+        tableview.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            self.netservice.refresh()
+        })
+
+        tableview.mj_footer = MJRefreshAutoFooter.init(refreshingBlock: {
+            self.netservice.load()
+        })
+
+        tableview.mj_header.beginRefreshing()
     }
 
     public func registerCellForTableview() {
@@ -119,10 +130,43 @@ extension CardSearchListBaseController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+
 
 }
 
 // ... 因为声明了带有 CardSearchDelegate 的属性所以必须实现的延展
 extension CardSearchListBaseController: CardSearchDelegate {
+
+    func recall(withNetType netStatus: NetWorkStatus, IsSuccess success: Bool, Message msg: String) -> Bool {
+
+        if success {
+            switch netStatus {
+            case  .refresh:
+                // .... 刷新列表操作
+                tableview.reloadData()
+                endRefresh()
+                print("01 .. 刷新列表的操作")
+            case  .loaddata:
+                // .... 加载列表操作
+                tableview.reloadData()
+                endRefresh()
+                print("02 .. 加载列表的操作")
+            case  .searchchanged:
+                // .... 修改选中条件操作
+                tableview.reloadData()
+                print("03 .. 修改选中条件的方法")
+            case  .unknow:
+                print("网络请求异常 .... 获取不到指定的网络请求类型")
+            }
+            return true
+        }
+
+        print(msg)
+
+        return false
+    }
 
 }

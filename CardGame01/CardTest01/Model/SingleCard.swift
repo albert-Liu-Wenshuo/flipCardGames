@@ -12,13 +12,13 @@ import Foundation
 
 struct SingleCard: Codable {
 
-    var clane: String?
+    var clane: String
     var relatedType: String?
     var seriesImg: String?
     var price: Int?
     var rule: String?
     var series: Int?
-    var cname: String?
+    var cname: String
     var deckable: Int?
     var relatedCard: String?
     var ruleNew: String?
@@ -27,7 +27,7 @@ struct SingleCard: Codable {
     var gameid: Int?
     var seriesName: String?
     var faq: String?
-    var rarity: String?
+    var rarity: String
     var attribute: String?
     var power: Int?
     var forge: Int?
@@ -45,11 +45,11 @@ struct SingleCard: Codable {
     var updated: Int?
     var mPDecompose: Int?
     var seriesSize: Int?
-    var ename: String?
+    var ename: String
     var id: Int?
     var articleId: String?
     var typee: String?
-    var faction: String?
+    var faction: String
     var goldForge: Int?
     var goldDecompose: Int?
     var position: Int?

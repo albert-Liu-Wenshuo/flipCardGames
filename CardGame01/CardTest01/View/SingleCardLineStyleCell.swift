@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class SingleCardLineStyleCell: UITableViewCell {
 
@@ -47,6 +48,18 @@ class SingleCardLineStyleCell: UITableViewCell {
         }
     }
 
+    var icon = UIImageView.init() {
+
+        didSet(icon) {
+            icon.isUserInteractionEnabled = false
+            icon.contentMode = .scaleAspectFill
+        }
+    }
+
+
+
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -77,6 +90,7 @@ class SingleCardLineStyleCell: UITableViewCell {
         addSubview(factionLabel)
         addSubview(claneLabel)
         addSubview(rarityLabel)
+        addSubview(icon)
     }
 
     func itemLayout() {
@@ -105,15 +119,24 @@ class SingleCardLineStyleCell: UITableViewCell {
             rarity.top.equalTo(claneLabel.snp_bottomMargin).offset(12)
             rarity.left.equalTo(cnameLabel)
         }
+
+        icon.snp.makeConstraints { (icon) in
+            icon.size.lessThanOrEqualTo(CGSize.init(width: 120, height: 150))
+            icon.right.equalToSuperview().offset(-20)
+            icon.top.equalToSuperview()
+        }
     }
 
     func config(with model: SingleCard) {
         // ... 对于获取的数据传递到 cell上面的方法
-        cnameLabel.text = model.cname
-        enameLabel.text = model.ename
-        factionLabel.text = model.faction
-        claneLabel.text = model.clane
-        rarityLabel.text = model.rarity
+
+        cnameLabel.text = "中文名 : " + model.cname
+        enameLabel.text = "英文名 : " + model.ename
+        factionLabel.text = "阵 营 : " + model.faction
+        claneLabel.text = "站 位 : " + model.clane
+        rarityLabel.text = "稀有度 : " + model.rarity
+        guard let url_str = model.img else { return }
+        icon.sd_setImage(with: URL.init(string: url_str), completed: nil)
     }
 
 }

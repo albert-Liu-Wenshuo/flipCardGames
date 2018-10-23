@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Launcher Controller-->
         <scene sceneID="BGj-tS-Q5g">
             <objects>
-                <viewController id="gNz-3j-W7w" sceneMemberID="viewController">
+                <viewController id="gNz-3j-W7w" customClass="LauncherController" customModule="CardGame01" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gpf-I3-wUo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                 <color key="textColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="爱心.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="RwF-vx-n58">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="爱心" translatesAutoresizingMaskIntoConstraints="NO" id="RwF-vx-n58">
                                 <rect key="frame" x="67.666666666666686" y="124" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="MX9-CB-Lub"/>
@@ -61,17 +61,36 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwa-Pp-Wlr">
+                                <rect key="frame" x="20" y="451" width="335" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="fGT-CI-c1a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="卡牌列表">
+                                    <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushtoCardList:" destination="gNz-3j-W7w" eventType="touchUpInside" id="Zuw-le-h9x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PFN-xD-4ae" firstAttribute="trailing" secondItem="fvP-WA-2wj" secondAttribute="trailing" constant="20" id="3qf-Uk-raY"/>
                             <constraint firstItem="PFN-xD-4ae" firstAttribute="bottom" secondItem="bCG-FT-PKK" secondAttribute="bottom" constant="40" id="5LC-Iv-SMX"/>
+                            <constraint firstItem="PFN-xD-4ae" firstAttribute="trailing" secondItem="Nwa-Pp-Wlr" secondAttribute="trailing" constant="20" id="AOz-gi-BuY"/>
                             <constraint firstAttribute="trailing" secondItem="81e-Br-HO6" secondAttribute="trailing" constant="20" id="FX5-Wc-Eq1"/>
                             <constraint firstItem="RwF-vx-n58" firstAttribute="centerX" secondItem="gpf-I3-wUo" secondAttribute="centerX" id="Opb-cH-Jhz"/>
                             <constraint firstAttribute="trailing" secondItem="bCG-FT-PKK" secondAttribute="trailing" constant="20" id="Png-2t-PPC"/>
                             <constraint firstItem="fvP-WA-2wj" firstAttribute="leading" secondItem="PFN-xD-4ae" secondAttribute="leading" constant="20" id="SBf-6L-yx4"/>
                             <constraint firstItem="fvP-WA-2wj" firstAttribute="top" secondItem="RwF-vx-n58" secondAttribute="bottom" constant="40" id="WPV-hA-CbI"/>
+                            <constraint firstItem="Nwa-Pp-Wlr" firstAttribute="top" secondItem="fvP-WA-2wj" secondAttribute="bottom" constant="12" id="XZ8-Cz-qhT"/>
                             <constraint firstItem="bCG-FT-PKK" firstAttribute="leading" secondItem="PFN-xD-4ae" secondAttribute="leading" constant="20" id="fTg-iR-SGQ"/>
+                            <constraint firstItem="Nwa-Pp-Wlr" firstAttribute="leading" secondItem="PFN-xD-4ae" secondAttribute="leading" constant="20" id="ffg-2x-sLg"/>
                             <constraint firstItem="RwF-vx-n58" firstAttribute="top" secondItem="PFN-xD-4ae" secondAttribute="top" constant="80" id="kcJ-Pg-cAa"/>
                             <constraint firstItem="bCG-FT-PKK" firstAttribute="top" secondItem="81e-Br-HO6" secondAttribute="bottom" constant="20" id="lSy-4K-Rbr"/>
                             <constraint firstItem="81e-Br-HO6" firstAttribute="leading" secondItem="PFN-xD-4ae" secondAttribute="leading" constant="20" id="oVk-LX-XXI"/>
@@ -285,6 +304,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="爱心.jpeg" width="1500" height="1500"/>
+        <image name="爱心" width="128" height="128"/>
     </resources>
 </document>

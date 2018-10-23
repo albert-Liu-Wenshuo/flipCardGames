@@ -10,5 +10,6 @@ target 'CardGame01' do
   pod 'Alamofire', '4.7.3'
   pod 'SnapKit', '4.0.1'
   pod 'MJRefresh', '3.1.15.7'
+  pod 'SDWebImage', '5.0.0-beta3'
 
 end

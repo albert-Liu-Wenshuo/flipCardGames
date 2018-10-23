@@ -15,9 +15,10 @@ enum NetWorkStatus {
     case refresh
     case loaddata
     case searchchanged
+    case unknow
 }
 
-struct CardSearchManager {
+class CardSearchManager {
 
     // ... 创建必要的刷新组件
     var page = 0        // ... 默认 page = 0
@@ -29,6 +30,18 @@ struct CardSearchManager {
 
     // ... 需要一个回调的参数
     var delegate : CardSearchDelegate
+
+    // ... 设置修改网络状态的参数
+    var search_net_status : NetWorkStatus? {
+
+        didSet(status) {
+            guard let _ = status else {
+                return
+            }
+            searchCardList(of: params)
+        }
+    }
+
 
     // ... 需要保存的搜索状态
     var searchParams: [String: Any]?
@@ -47,6 +60,8 @@ struct CardSearchManager {
         // ... 使用 unowned 解除循环引用
         unowned let delegatorController = targetVC
         self.delegate = delegatorController
+        self.search_net_status = NetWorkStatus.unknow
+
     }
 
 
@@ -59,19 +74,42 @@ struct CardSearchManager {
      3. 收藏选中的卡牌(取消收藏； 收藏)
      */
 
-    mutating func searchCardList(of params: [String: Any]?)  {
+    func searchCardList(of params: [String: Any]?)  {
 
-        let url = URL.init(string: "")!
+        let url = URL.init(string: "http://iyindgi.gonlan.com/gwent/card/search/vertical")!
 
-        // ... swift 的新版本声明 weakself 的方式
-        let weakSelf = UnsafeMutablePointer(&self)
+        /**
+         对于swift中的几种在闭包使用self的手段
+
+         1. unowned let weakself = self 声明该对self的引用在未来会被销毁；这样可以避免循环引用 使用let 修饰不用 解包
+         2. weak var weakself = self 声明该self的引用是弱引用，因为弱引用需要解包，所以调用的时候需要用guard语法糖承接一下
+         3. 在自己控制的闭包中 使用 [weak self] 可以直接将内容作为参数穿进去
+
+         注：unowned 声明不会强持有，但是也不会检测是否为 nil 所以当调用的时候可能会出现调用的对象已经被销毁的现象
+
+         @objc private func buttonClick() {
+         thirdViewController.closure = { [weak self] in
+         guard let `self` = self else { return }
+         self.test()
+         }
+         navigationController?.pushViewController(thirdViewController, animated: true)
+
+         */
+        weak var weakself = self
 
         Alamofire.request(url, method:  .post, parameters: params).responseJSON { (data) in
 
+            guard let strongself = weakself else {
+                print("当前对象 CardSearchManager 已经被注销掉")
+                return
+            }
+
             if data.result.isSuccess {
-                guard let jsonDic = data.result.value as! [String: Any]?,
-                let cardlistDic = jsonDic["cards"] as! [[String: Any]]? else {
+                guard let datadic = data.result.value as! [String: Any]? ,
+                    let jsonDic = datadic["data"] as! [String: Any]? ,
+                    let cardlistDic = jsonDic["cards"] as! [[String: Any]]? else {
                     print("数据解析格式失败 ... 原始数据为\n\(String(describing: data.result.value))")
+                    let _ = strongself.delegate.recall(withNetType: strongself.search_net_status ?? NetWorkStatus.unknow, IsSuccess: false, Message: "数据取出失败")
                     return
                 }
 
@@ -86,44 +124,53 @@ struct CardSearchManager {
                 }) {
                     print("..... 有解析异常的数据 ..... ")
                     // .... 返回错误信息
-//                    weakSelf.pointee.delegate.recall(withNetType: <#T##NetWorkStatus#>, IsSuccess: <#T##Bool#>, Message: <#T##String#>)
+                    let _ = strongself.delegate.recall(withNetType: strongself.search_net_status ?? NetWorkStatus.unknow, IsSuccess: false, Message: "解析有异常数据")
                 }else {
                     for index in cards.indices {
                         guard let card = cards[index] else {
                             return
                         }
-                        weakSelf.pointee.list.append(card)
+                        strongself.list.append(card)
                     }
+                    let _ = strongself.delegate.recall(withNetType: strongself.search_net_status ?? NetWorkStatus.unknow, IsSuccess: true, Message: "解析数据成功")
                 }
 
             }else {
                 // ... 获取网络请求失败了
-                if weakSelf.pointee.page == 0 {
-                    weakSelf.pointee.list.removeAll()
+                if strongself.page == 0 {
+                    strongself.list.removeAll()
                 }else {
-                    weakSelf.pointee.page -= 1
+                    strongself.page -= 1
                 }
+                let _ = strongself.delegate.recall(withNetType: strongself.search_net_status ?? NetWorkStatus.unknow, IsSuccess: false, Message: data.result.error as! String)
             }
 
         }
 
     }
 
-    mutating func refresh() {
+    func refresh() {
         page = 0
-        searchCardList(of: params)
+        search_net_status = NetWorkStatus.refresh
     }
 
-    mutating func load() {
+    func load() {
         page += 1
-        searchCardList(of: params)
+        search_net_status = NetWorkStatus.loaddata
     }
 
-    mutating func changeSearchSelectionDic(with params: [String: Any]) {
+    func changeSearchSelectionDic(with params: [String: Any]) {
         searchParams = params
-        searchCardList(of: self.params)
+        search_net_status = NetWorkStatus.searchchanged
     }
 
+
+    // ... 调用回调代理的方法
+    func callback(of success: Bool, NetStatus status: NetWorkStatus, Message msg: String) {
+
+        let _ = self.delegate.recall(withNetType: status, IsSuccess: success, Message: msg)
+
+    }
 
 }
 
@@ -136,28 +183,30 @@ protocol CardSearchDelegate {
 }
 
 // ... 设置当实现protocol的是 UIViewController 的时候的默认实现
-extension CardSearchDelegate where Self: CardSearchListBaseController {
-
-    func recall(withNetType netStatus: NetWorkStatus, IsSuccess success: Bool, Message msg: String) -> Bool {
-
-        switch netStatus {
-        case  .refresh:
-            // .... 刷新列表操作
-            tableview.reloadData()
-            endRefresh()
-            print("01 .. ")
-        case  .loaddata:
-            // .... 加载列表操作
-            tableview.reloadData()
-            endRefresh()
-            print("02 .. ")
-        case  .searchchanged:
-            // .... 修改选中条件操作
-            tableview.reloadData()
-            print("03 .. ")
-        }
-
-        return true
-    }
-
-}
+//extension CardSearchDelegate where Self: CardSearchListBaseController {
+//
+//    func recall(withNetType netStatus: NetWorkStatus, IsSuccess success: Bool, Message msg: String) -> Bool {
+//
+//        switch netStatus {
+//        case  .refresh:
+//            // .... 刷新列表操作
+//            tableview.reloadData()
+//            endRefresh()
+//            print("01 .. ")
+//        case  .loaddata:
+//            // .... 加载列表操作
+//            tableview.reloadData()
+//            endRefresh()
+//            print("02 .. ")
+//        case  .searchchanged:
+//            // .... 修改选中条件操作
+//            tableview.reloadData()
+//            print("03 .. ")
+//        case  .unknow:
+//            print("网络请求异常 .... 获取不到指定的网络请求类型")
+//        }
+//
+//        return true
+//    }
+//
+//}

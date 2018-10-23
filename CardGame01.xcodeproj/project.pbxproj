@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		040AEFCB21798C8600E497A5 /* imageAsset in Resources */ = {isa = PBXBuildFile; fileRef = 040AEFCA21798C8600E497A5 /* imageAsset */; };
+		040AEFD12179C5B500E497A5 /* LauncherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040AEFD02179C5B500E497A5 /* LauncherController.swift */; };
 		042490BC217485A80035412C /* ToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042490BB217485A80035412C /* ToolExtension.swift */; };
 		04BD63CF21773488008518EB /* SingleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD63CE21773488008518EB /* SingleCard.swift */; };
 		04BD63D32177350E008518EB /* CardSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD63D22177350E008518EB /* CardSearchManager.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		040AEFCA21798C8600E497A5 /* imageAsset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imageAsset; path = CardGame01/imageAsset; sourceTree = "<group>"; };
+		040AEFD02179C5B500E497A5 /* LauncherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherController.swift; sourceTree = "<group>"; };
 		042490BB217485A80035412C /* ToolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolExtension.swift; sourceTree = "<group>"; };
 		04BD63CE21773488008518EB /* SingleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCard.swift; sourceTree = "<group>"; };
 		04BD63D22177350E008518EB /* CardSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSearchManager.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				04CE9ECF216F499400BC21FE /* Model */,
+				040AEFD02179C5B500E497A5 /* LauncherController.swift */,
 			);
 			path = Class01;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CardGame01/Pods-CardGame01-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -295,6 +299,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BD63E0217769BD008518EB /* SingleCardLineStyleCell.swift in Sources */,
+				040AEFD12179C5B500E497A5 /* LauncherController.swift in Sources */,
 				04CE9EBE216DE5A300BC21FE /* ViewController.swift in Sources */,
 				04CE5F33217440920037CD08 /* Class03Teach.swift in Sources */,
 				04CE9EBC216DE5A300BC21FE /* AppDelegate.swift in Sources */,
