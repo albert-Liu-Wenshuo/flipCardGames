@@ -23,6 +23,7 @@
 		04CE9ED2216F49BE00BC21FE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED1216F49BE00BC21FE /* Card.swift */; };
 		04CE9ED4216F4C8900BC21FE /* FlipCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */; };
 		04CE9ED72170783C00BC21FE /* Class02Teach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE9ED62170783C00BC21FE /* Class02Teach.swift */; };
+		04E0A2A6217EC03B0041B734 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0A2A5217EC03B0041B734 /* UIDeviceExtension.swift */; };
 		9876BFE7BC66B66DF3E71C4E /* Pods_CardGame01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3466B4C7540C4A72701FADCB /* Pods_CardGame01.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		04CE9ED1216F49BE00BC21FE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		04CE9ED3216F4C8900BC21FE /* FlipCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCardViewModel.swift; sourceTree = "<group>"; };
 		04CE9ED62170783C00BC21FE /* Class02Teach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Class02Teach.swift; path = CardGame01/Class02Teach.swift; sourceTree = SOURCE_ROOT; };
+		04E0A2A5217EC03B0041B734 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		3466B4C7540C4A72701FADCB /* Pods_CardGame01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardGame01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33182D4D9533A7AFD36069B /* Pods-CardGame01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGame01.debug.xcconfig"; path = "Target Support Files/Pods-CardGame01/Pods-CardGame01.debug.xcconfig"; sourceTree = "<group>"; };
 		C477A4B8BA5200E68EE49AA8 /* Pods-CardGame01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardGame01.release.xcconfig"; path = "Target Support Files/Pods-CardGame01/Pods-CardGame01.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,11 +91,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		04BD63D421774175008518EB /* ProtocolTool */ = {
+		04BD63D421774175008518EB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				04E0A2A4217EC0250041B734 /* extension */,
 			);
-			path = ProtocolTool;
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		04BD63D721775E7E008518EB /* Bases */ = {
@@ -142,7 +145,7 @@
 		04CE9EBA216DE5A300BC21FE /* CardGame01 */ = {
 			isa = PBXGroup;
 			children = (
-				04BD63D421774175008518EB /* ProtocolTool */,
+				04BD63D421774175008518EB /* Tool */,
 				04BD63CD217732AA008518EB /* CardTest01 */,
 				04CE9ECE216F498900BC21FE /* Class01 */,
 				04CE9ED52170781400BC21FE /* Class02 */,
@@ -190,6 +193,14 @@
 				04CE9ED62170783C00BC21FE /* Class02Teach.swift */,
 			);
 			path = Class02;
+			sourceTree = "<group>";
+		};
+		04E0A2A4217EC0250041B734 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				04E0A2A5217EC03B0041B734 /* UIDeviceExtension.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		853EDEA2B5B847BF8DBEA5F2 /* Pods */ = {
@@ -243,6 +254,7 @@
 				TargetAttributes = {
 					04CE9EB7216DE5A300BC21FE = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -337,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BD63E0217769BD008518EB /* SingleCardLineStyleCell.swift in Sources */,
+				04E0A2A6217EC03B0041B734 /* UIDeviceExtension.swift in Sources */,
 				040AEFD12179C5B500E497A5 /* LauncherController.swift in Sources */,
 				04CE9EBE216DE5A300BC21FE /* ViewController.swift in Sources */,
 				04CE5F33217440920037CD08 /* Class03Teach.swift in Sources */,
@@ -503,7 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Albert.CardGame01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -522,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Albert.CardGame01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
